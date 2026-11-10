@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Food Garden | Multi-Cuisine Restaurant on GS Road, Guwahati</title>
+  <meta name="description" content="The Food Garden is a multi-cuisine restaurant on GS Road, Christian Basti, Guwahati. Explore the menu, read food reviews and request a table. Good Food. Great Moments. (Demo restaurant website.)">
+
+  <!-- DEMO SITE: this is a fictional restaurant, so search engines are asked not to index it.
+       Remove the next line when this site is used for a real restaurant. -->
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- The phone number is masked on purpose; stop phones from turning it into a call link. -->
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#FAF5EC">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="The Food Garden | Good Food. Great Moments.">
+  <meta property="og:description" content="Multi-cuisine restaurant on GS Road, Christian Basti, Guwahati. Explore the menu and request a table. Demo restaurant website.">
+
+  <!-- favicon.ico sits next to this file: browsers without SVG icon support use it, and it answers the
+       automatic /favicon.ico request. -->
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+
+  <link rel="preload" href="assets/fonts/dm-sans-text-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/fraunces-display-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/styles.css">
+
+  <script src="assets/js/data.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ===== SVG symbols: logo, demo map and icons (icons: Lucide, ISC License; WhatsApp glyph: Simple Icons, CC0) ===== -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="svg-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="logo-mark" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="24" fill="var(--logo-bg, #55622F)"/>
+      <circle cx="24" cy="24" r="18.5" fill="none" stroke="var(--logo-fg, #FAF5EC)" stroke-width="1.4" opacity=".42"/>
+      <path d="M24 36.5V24" fill="none" stroke="var(--logo-fg, #FAF5EC)" stroke-width="2.3" stroke-linecap="round"/>
+      <path d="M23 28.4c-6 .2-9.9-3.5-10.1-9.9 6.3-.3 10.2 3.3 10.1 9.9Z" fill="var(--logo-fg, #FAF5EC)"/>
+      <path d="M25 24.6c-.1-6.9 3.9-10.9 10.5-10.6.2 6.9-3.8 10.9-10.5 10.6Z" fill="var(--logo-fg, #FAF5EC)"/>
+    </symbol>
+
+    <!-- Illustrative map. It is deliberately NOT a real map and carries no real pin. -->
+    <symbol id="demo-map" viewBox="0 0 800 500">
+      <rect width="800" height="500" fill="#F3EBDC"/>
+      <!-- Shifted so the marked spot is the exact centre of the artwork: the place label (plain HTML) is centred over it. -->
+      <g transform="translate(-12 -12)">
+        <g fill="#EADFCA">
+          <rect x="36" y="196" width="118" height="74" rx="12"/>
+          <rect x="250" y="40" width="130" height="92" rx="12"/>
+          <rect x="258" y="150" width="96" height="62" rx="12"/>
+          <rect x="486" y="36" width="92" height="62" rx="12"/>
+          <rect x="610" y="150" width="150" height="70" rx="12"/>
+          <rect x="486" y="300" width="110" height="60" rx="12"/>
+          <rect x="56" y="330" width="96" height="48" rx="12"/>
+          <rect x="236" y="410" width="130" height="62" rx="12"/>
+          <rect x="486" y="410" width="60" height="58" rx="12"/>
+          <rect x="690" y="250" width="80" height="60" rx="12"/>
+        </g>
+        <path d="M62 62c30-22 92-17 107 20 14 35-24 62-66 56-42-5-68-52-41-76Z" fill="#D6E4E1"/>
+        <path d="M596 392c40-30 122-18 150 22 24 36-8 76-70 80-56 4-112-28-104-66 3-14 12-27 24-36Z" fill="#DCE4C4"/>
+        <g fill="#C6D2A6">
+          <circle cx="640" cy="430" r="11"/><circle cx="676" cy="452" r="13"/><circle cx="704" cy="420" r="10"/><circle cx="618" cy="462" r="8"/>
+        </g>
+        <g fill="none" stroke="#FFFDF9" stroke-width="11" stroke-linecap="round">
+          <path d="M206-20c6 120 26 250 44 372"/>
+          <path d="M-20 300c80-4 150 2 262 38"/>
+          <path d="M434-20c-10 90 6 170 34 236"/>
+          <path d="M412 262c16 80 34 160 40 258"/>
+          <path d="M590 148c56 46 130 80 230 96"/>
+          <path d="M-20 150c90 4 150-6 226-22 80-16 150-18 232-14"/>
+          <path d="M640-20c-4 60-22 110-50 168"/>
+          <path d="M452 376c80 2 110-6 148-26"/>
+        </g>
+        <path d="M-20 436c170-26 300-84 432-174S672 106 820 66" fill="none" stroke="#E4D5BA" stroke-width="34" stroke-linecap="round"/>
+        <path d="M-20 436c170-26 300-84 432-174S672 106 820 66" fill="none" stroke="#FFFDF9" stroke-width="27" stroke-linecap="round"/>
+        <path d="M-20 436c170-26 300-84 432-174S672 106 820 66" fill="none" stroke="#E7DAC2" stroke-width="2" stroke-dasharray="12 14"/>
+        <text class="map-road" x="266" y="364" transform="rotate(-25.5 266 364)">GS ROAD</text>
+        <text class="map-road map-road--far" x="598" y="176" transform="rotate(-27 598 176)">GS ROAD</text>
+        <text class="map-area" x="250" y="266" text-anchor="middle">CHRISTIAN BASTI</text>
+        <circle cx="412" cy="262" r="74" fill="#C2603C" fill-opacity=".1" stroke="#C2603C" stroke-opacity=".45" stroke-width="2" stroke-dasharray="5 7"/>
+        <circle cx="412" cy="262" r="9" fill="#AC4F2E" stroke="#FFFDF9" stroke-width="3.5"/>
+      </g>
+    </symbol>
+    <!--ICONS-->
+    <symbol id="i-map-pin" viewBox="0 0 24 24"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+    <symbol id="i-navigation" viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></symbol>
+    <symbol id="i-sprout" viewBox="0 0 24 24"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><circle cx="9" cy="7" r="4"/></symbol>
+    <symbol id="i-calendar-days" viewBox="0 0 24 24"><path d="M8 2v3"/><path d="M16 2v3"/><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M8 13h.01"/><path d="M12 13h.01"/><path d="M16 13h.01"/><path d="M8 17h.01"/><path d="M12 17h.01"/><path d="M16 17h.01"/></symbol>
+    <symbol id="i-square-pen" viewBox="0 0 24 24"><path d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"/></symbol>
+    <symbol id="i-circle-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></symbol>
+    <symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 9-5.5 5.5L8 12"/></symbol>
+    <symbol id="i-trash-2" viewBox="0 0 24 24"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></symbol>
+    <!--/ICONS-->
+  </svg>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header" id="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="#home">
+        <svg class="brand__mark" viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><use href="#logo-mark"/></svg>
+        <span class="brand__text">
+          <span class="brand__name">The Food Garden</span>
+          <span class="brand__tag">Multi-Cuisine Restaurant</span>
+          <span class="sr-only">Home</span>
+        </span>
+      </a>
+
+      <!-- The menu button comes right before the menu it opens (keyboard and screen-reader order); the stylesheet shows it at the end of the bar. -->
+      <button class="nav-toggle" type="button" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg class="icon nav-toggle__open" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="icon nav-toggle__close" aria-hidden="true"><use href="#i-x"/></svg>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <ul class="site-nav__list">
+          <li><a href="#home" data-nav="home">Home</a></li>
+          <li><a href="#menu" data-nav="menu">Menu</a></li>
+          <li><a href="#about" data-nav="about">About</a></li>
+          <li><a href="#reviews" data-nav="reviews">Reviews</a></li>
+          <li><a href="#location" data-nav="location">Location</a></li>
+          <li><a href="#contact" data-nav="contact">Contact</a></li>
+        </ul>
+        <a class="btn btn--primary btn--block site-nav__cta" href="#reserve">Book a Table</a>
+      </nav>
+
+      <a class="btn btn--primary header-cta" href="#reserve" aria-label="Book a Table"><span>Book<span class="header-cta__rest"> a Table</span></span></a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <!-- Opening status. The label follows the "Opening hours" list further down (see #hours-list). -->
+          <p class="status-badge" id="open-status"><span class="status-badge__dot" aria-hidden="true"></span><span id="open-status-text">Open Today</span></p>
+          <h1 class="hero__title" id="hero-title">Fresh Flavours.<br>Unforgettable Moments.</h1>
+          <p class="hero__sub">Discover delicious food, carefully prepared with fresh ingredients and served with warmth at The Food Garden.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#menu">Explore Our Menu</a>
+            <a class="btn btn--outline btn--lg" href="#reserve">Book a Table</a>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <div class="hero__photo">
+            <picture>
+              <!-- Phones: 5:4 crop. Tablets and desktop: square. AVIF first, WebP as the fallback. -->
+              <source media="(max-width: 599px)" type="image/avif" srcset="assets/img/hero-mobile-640.avif 640w, assets/img/hero-mobile-800.avif 800w" sizes="92vw" width="800" height="640">
+              <source media="(max-width: 599px)" type="image/webp" srcset="assets/img/hero-mobile-640.webp 640w, assets/img/hero-mobile-800.webp 800w" sizes="92vw" width="800" height="640">
+              <source type="image/avif" srcset="assets/img/hero-640.avif 640w, assets/img/hero-960.avif 960w, assets/img/hero-1254.avif 1254w" sizes="(min-width: 1280px) 568px, (min-width: 900px) 45vw, 92vw">
+              <source type="image/webp" srcset="assets/img/hero-640.webp 640w, assets/img/hero-960.webp 960w, assets/img/hero-1254.webp 1254w" sizes="(min-width: 1280px) 568px, (min-width: 900px) 45vw, 92vw">
+              <img src="assets/img/hero-960.webp" width="1254" height="1254" alt="A table at The Food Garden laid with chicken biryani, paneer butter masala, butter naan, chicken tikka, margherita pizza, spring rolls and fresh lime soda" fetchpriority="high">
+            </picture>
+          </div>
+          <div class="hero__place">
+            <span class="hero__place-icon" aria-hidden="true"><svg class="icon"><use href="#i-map-pin"/></svg></span>
+            <p><strong>THE FOOD GARDEN</strong><span>GS Road, Christian Basti, Guwahati</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= RESTAURANT INFORMATION ======================= -->
+    <section class="info" id="info" aria-labelledby="info-title">
+      <div class="container">
+        <div class="info__card">
+          <div class="info__main">
+            <p class="eyebrow">Restaurant Information</p>
+            <h2 class="info__title" id="info-title">The Food Garden</h2>
+            <p class="info__tagline">Good Food. Great Moments.</p>
+
+            <dl class="facts">
+              <div class="fact">
+                <dt><span class="fact__icon" aria-hidden="true"><svg class="icon"><use href="#i-map-pin"/></svg></span>Location</dt>
+                <dd>GS Road, Christian Basti, Guwahati, Assam,&nbsp;India.</dd>
+              </div>
+              <div class="fact">
+                <dt><span class="fact__icon" aria-hidden="true"><svg class="icon"><use href="#i-utensils"/></svg></span>Cuisine</dt>
+                <dd>Multi-Cuisine</dd>
+              </div>
+              <div class="fact">
+                <dt><span class="fact__icon" aria-hidden="true"><svg class="icon"><use href="#i-wallet"/></svg></span>Price Range</dt>
+                <dd>₹150 – ₹600 per person</dd>
+              </div>
+              <div class="fact">
+                <dt><span class="fact__icon" aria-hidden="true"><svg class="icon"><use href="#i-phone"/></svg></span>Contact</dt>
+                <dd><span class="phone-masked" translate="no">+91 98765 *****</span></dd>
+              </div>
+            </dl>
+
+            <div class="info__actions">
+              <a class="btn btn--outline" href="#location"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>Location</a>
+              <!-- A button, not a tel: link. The masked demo number must never be dialled. -->
+              <button class="btn btn--outline" type="button" data-demo-call><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call</button>
+              <a class="btn btn--primary" href="#reserve">Book a Table</a>
+            </div>
+          </div>
+
+          <a class="info__map map" href="#location">
+            <svg class="map__art" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#demo-map"/></svg>
+            <span class="sr-only">Map: </span>
+            <span class="map__place"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg>The Food Garden</span>
+            <span class="map__badge">Demo Location</span>
+            <span class="sr-only">. View the location section.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== MENU ============================== -->
+    <section class="section menu" id="menu" aria-labelledby="menu-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Our Menu</p>
+          <h2 id="menu-title">Explore Our Delicious Menu</h2>
+          <p class="section-head__sub">Something delicious for every craving.</p>
+        </header>
+
+        <div class="menu-toolbar">
+          <div class="search">
+            <label class="sr-only" for="menu-search">Search food by name</label>
+            <svg class="icon search__icon" aria-hidden="true"><use href="#i-search"/></svg>
+            <input class="search__input" type="search" id="menu-search" name="q" placeholder="Search by food name" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search">
+            <button class="search__clear" type="button" id="menu-search-clear" aria-label="Clear search" hidden><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+          </div>
+          <div class="sort">
+            <label class="sort__label" for="menu-sort">Sort by</label>
+            <select class="select" id="menu-sort" name="sort">
+              <option value="popular">Popular</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="chips" id="menu-categories" role="group" aria-label="Food categories"></div>
+
+        <p class="menu-count" id="menu-count" role="status" aria-live="polite"></p>
+
+        <div class="menu-grid" id="menu-grid"></div>
+
+        <div class="menu-empty" id="menu-empty" hidden>
+          <span class="menu-empty__icon" aria-hidden="true"><svg class="icon"><use href="#i-search"/></svg></span>
+          <p class="menu-empty__title" id="menu-empty-title">No dishes found</p>
+          <p class="menu-empty__text" id="menu-empty-text"></p>
+          <button class="btn btn--outline" type="button" id="menu-reset">Show all dishes</button>
+        </div>
+
+        <noscript><p class="notice">The interactive menu, reviews and booking form need JavaScript. Please enable it to browse the dishes.</p></noscript>
+
+        <p class="demo-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>All prices and ratings are fictional demo information.</p>
+      </div>
+    </section>
+
+    <!-- ============================== ABOUT ============================== -->
+    <section class="section section--tint about" id="about" aria-labelledby="about-title">
+      <div class="container about__grid">
+        <div class="about__media">
+          <img class="about__img about__img--main" src="assets/img/about-interior-500.webp" srcset="assets/img/about-interior-500.webp 500w, assets/img/about-interior-1000.webp 1000w" sizes="(min-width: 900px) 400px, 72vw" width="1000" height="1250" loading="lazy" decoding="async" alt="Bright dining room with oak tables, an olive-green banquette, potted plants and woven rattan lamps">
+          <img class="about__img about__img--food" src="assets/img/about-food-320.webp" srcset="assets/img/about-food-320.webp 320w, assets/img/about-food-640.webp 640w" sizes="(min-width: 900px) 250px, 42vw" width="640" height="640" loading="lazy" decoding="async" alt="A bowl of paneer butter masala finished with cream and fresh coriander">
+        </div>
+
+        <div class="about__copy">
+          <p class="eyebrow">About The Restaurant</p>
+          <h2 id="about-title">Good Food Brings People Together.</h2>
+          <p>At The Food Garden, we believe every meal should be an enjoyable experience.</p>
+          <p>From delicious starters to satisfying main courses and delightful desserts, our menu brings together flavours for every occasion.</p>
+          <p>Whether you're visiting with family, catching up with friends, or enjoying a casual meal, we're here to make every visit special.</p>
+
+          <ul class="about__points">
+            <li><span class="about__point-icon" aria-hidden="true"><svg class="icon"><use href="#i-sprout"/></svg></span>Fresh ingredients</li>
+            <li><span class="about__point-icon" aria-hidden="true"><svg class="icon"><use href="#i-utensils"/></svg></span>Flavours for every occasion</li>
+            <li><span class="about__point-icon" aria-hidden="true"><svg class="icon"><use href="#i-users"/></svg></span>Family &amp; friends welcome</li>
+          </ul>
+
+          <a class="btn btn--secondary" href="#menu">Explore Our Menu<svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== REVIEWS ============================== -->
+    <section class="section reviews" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Reviews &amp; Ratings</p>
+          <h2 id="reviews-title">Food Reviews &amp; Ratings</h2>
+          <p class="section-head__sub">Choose a dish to read its reviews, or share your own experience.</p>
+        </header>
+
+        <p class="notice notice--center" id="reviews-disclaimer"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>These are sample reviews for demonstration purposes, not verified customer feedback.</span></p>
+
+        <div class="reviews__layout">
+          <div class="reviews__browse">
+            <div class="dish-picker" id="review-dish-picker" role="group" aria-label="Choose a dish to see its reviews"></div>
+            <div class="review-panel" id="review-panel" aria-live="polite"></div>
+          </div>
+
+          <form class="card review-form" id="write-review" novalidate aria-labelledby="review-form-title">
+            <h3 class="review-form__title" id="review-form-title" tabindex="-1">Write a Review</h3>
+            <p class="review-form__intro">Tried something from our menu? Tell others what you thought.</p>
+
+            <div class="field">
+              <label class="field__label" for="review-dish">Food item</label>
+              <select class="select" id="review-dish" name="dish" required></select>
+              <p class="field__error" id="review-dish-error" hidden></p>
+            </div>
+
+            <fieldset class="field star-input" id="review-rating" aria-describedby="review-rating-error">
+              <legend class="field__label">Your rating</legend>
+              <div class="star-input__row">
+                <div class="star-input__stars" id="review-stars"></div>
+                <span class="star-input__value" id="review-rating-text">Tap a star to rate</span>
+              </div>
+              <p class="field__error" id="review-rating-error" hidden></p>
+            </fieldset>
+
+            <div class="field">
+              <label class="field__label" for="review-name">Your name</label>
+              <input class="input" type="text" id="review-name" name="name" maxlength="40" autocomplete="given-name" placeholder="e.g. Ananya" required>
+              <p class="field__error" id="review-name-error" hidden></p>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="review-comment">Your review</label>
+              <textarea class="input input--area" id="review-comment" name="comment" rows="4" maxlength="400" placeholder="How was the taste, portion and service?" required></textarea>
+              <p class="field__error" id="review-comment-error" hidden></p>
+            </div>
+
+            <button class="btn btn--primary btn--block" type="submit">Submit Review</button>
+            <p class="form-status" id="review-status" role="status" aria-live="polite" hidden></p>
+            <p class="form-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span>Demo: your review is saved only in this browser and is shown as an unverified visitor review.</span></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== TABLE BOOKING ============================== -->
+    <section class="section reserve" id="reserve" aria-labelledby="reserve-title">
+      <div class="container reserve__grid">
+        <div class="reserve__head">
+          <p class="eyebrow eyebrow--light">Table Booking</p>
+          <h2 id="reserve-title" tabindex="-1">Reserve Your Table</h2>
+          <p class="reserve__lead">Planning a meal with family or friends? Reserve your table in advance.</p>
+        </div>
+
+        <div class="card reserve__card" id="booking-card">
+          <form class="booking-form" id="booking-form" novalidate aria-labelledby="reserve-title">
+            <div class="enquiry" id="booking-dishes" hidden>
+              <p class="enquiry__label">Dishes you're enquiring about</p>
+              <ul class="enquiry__list" id="booking-dishes-list"></ul>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="booking-name">Full Name</label>
+                <input class="input" type="text" id="booking-name" name="name" maxlength="60" autocomplete="name" placeholder="Your full name" required>
+                <p class="field__error" id="booking-name-error" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="booking-phone">Phone Number</label>
+                <input class="input" type="tel" id="booking-phone" name="phone" maxlength="20" inputmode="tel" autocomplete="tel" placeholder="Your mobile number" required>
+                <p class="field__error" id="booking-phone-error" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="booking-date">Date</label>
+                <input class="input" type="date" id="booking-date" name="date" required>
+                <p class="field__error" id="booking-date-error" hidden></p>
+              </div>
+              <div class="field">
+                <label class="field__label" for="booking-time">Preferred Time</label>
+                <select class="select" id="booking-time" name="time" required>
+                  <option value="">Select a time</option>
+                </select>
+                <p class="field__error" id="booking-time-error" hidden></p>
+              </div>
+              <div class="field field--full">
+                <label class="field__label" for="booking-guests">Number of Guests</label>
+                <select class="select" id="booking-guests" name="guests" required>
+                  <option value="">Select guests</option>
+                </select>
+                <p class="field__error" id="booking-guests-error" hidden></p>
+              </div>
+              <div class="field field--full">
+                <label class="field__label" for="booking-requests">Special Requests <span class="field__optional">(optional)</span></label>
+                <textarea class="input input--area" id="booking-requests" name="requests" rows="3" maxlength="300" placeholder="Birthday, high chair, seating preference…"></textarea>
+              </div>
+            </div>
+
+            <button class="btn btn--primary btn--lg btn--block" type="submit"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-whatsapp"/></svg>Request a Reservation</button>
+            <p class="form-note"><svg class="icon" aria-hidden="true"><use href="#i-info"/></svg><span id="booking-demo-note">Demo booking system. Your request opens in WhatsApp as a ready-to-send message. Nothing is stored or confirmed on this website.</span></p>
+          </form>
+
+          <div class="booking-result" id="booking-result" tabindex="-1" hidden>
+            <p class="booking-result__tag">Request prepared, not yet confirmed</p>
+            <h3 class="booking-result__title">Send your request on WhatsApp</h3>
+            <p class="booking-result__text" id="booking-result-text"></p>
+            <div class="booking-result__message" id="booking-result-message" role="group" aria-label="Message preview"></div>
+            <div class="booking-result__actions">
+              <a class="btn btn--primary" id="booking-whatsapp-link" href="#" target="_blank" rel="noopener noreferrer"><svg class="icon icon--solid" aria-hidden="true"><use href="#i-whatsapp"/></svg>Open WhatsApp</a>
+              <button class="btn btn--outline" type="button" id="booking-copy"><svg class="icon" aria-hidden="true"><use href="#i-copy"/></svg>Copy message</button>
+              <button class="btn btn--text" type="button" id="booking-edit">Edit details</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="reserve__aside">
+          <ol class="steps">
+            <li><span class="steps__num" aria-hidden="true">1</span><div><strong>Share your plan</strong><span>Pick a date, time and the number of guests.</span></div></li>
+            <li><span class="steps__num" aria-hidden="true">2</span><div><strong>Send it on WhatsApp</strong><span>Your details open as a ready-to-send message.</span></div></li>
+            <li><span class="steps__num" aria-hidden="true">3</span><div><strong>Wait for the reply</strong><span>A table is reserved only once the restaurant confirms.</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== LOCATION & CONTACT ============================== -->
+    <section class="section location" id="location" aria-labelledby="location-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow">Location &amp; Contact</p>
+          <h2 id="location-title">Find Us &amp; Visit Us</h2>
+          <p class="section-head__sub">On GS Road in Christian Basti, Guwahati.</p>
+        </header>
+
+        <div class="location__grid">
+          <figure class="map location__map">
+            <svg class="map__art" viewBox="0 0 800 500" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustrative map showing a demo location on GS Road, Christian Basti"><use href="#demo-map"/></svg>
+            <span class="map__place" aria-hidden="true"><svg class="icon"><use href="#i-map-pin"/></svg>The Food Garden</span>
+            <span class="map__badge">Demo Location</span>
+            <figcaption class="map__caption">Illustrative map, not to scale. No exact pin.</figcaption>
+          </figure>
+
+          <div class="card visit-card">
+            <span class="visit-card__icon" aria-hidden="true"><svg class="icon"><use href="#i-map-pin"/></svg></span>
+            <h3 class="visit-card__title">The Food Garden</h3>
+            <address class="visit-card__address">GS Road, Christian Basti,<br>Guwahati, Assam, India.</address>
+            <p class="visit-card__phone"><span class="visit-card__phone-label">Phone</span><span class="phone-masked" translate="no">+91 98765 *****</span></p>
+            <a class="btn btn--secondary btn--block" id="directions-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=GS%20Road%2C%20Christian%20Basti%2C%20Guwahati%2C%20Assam%2C%20India" target="_blank" rel="noopener noreferrer"><svg class="icon" aria-hidden="true"><use href="#i-navigation"/></svg>Get Directions</a>
+            <p class="visit-card__note">Demo location: opens Google Maps for the GS Road, Christian Basti area, not an exact address.</p>
+          </div>
+        </div>
+
+        <div class="contact-grid" id="contact">
+          <div class="card contact-card">
+            <h3 class="contact-card__title"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Contact</h3>
+            <dl class="contact-list">
+              <div><dt>Phone</dt><dd><span class="phone-masked" translate="no">+91 98765 *****</span></dd></div>
+              <div><dt>Table requests</dt><dd>By WhatsApp, using the booking form</dd></div>
+              <div><dt>Cuisine</dt><dd>Multi-Cuisine</dd></div>
+            </dl>
+            <button class="btn btn--outline btn--block" type="button" data-demo-call><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>Call</button>
+          </div>
+
+          <div class="card contact-card">
+            <h3 class="contact-card__title"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg>Opening Hours<span class="demo-pill">Demo timings</span></h3>
+            <!-- EDITABLE DEMO DATA. Change the times below, or add data-closed to a day and write "Closed".
+                 The "Open Today" badge in the hero follows this list. -->
+            <ul class="hours" id="hours-list">
+              <li data-day="monday"><span>Monday</span><span>11:00 AM – 10:30 PM</span></li>
+              <li data-day="tuesday"><span>Tuesday</span><span>11:00 AM – 10:30 PM</span></li>
+              <li data-day="wednesday"><span>Wednesday</span><span>11:00 AM – 10:30 PM</span></li>
+              <li data-day="thursday"><span>Thursday</span><span>11:00 AM – 10:30 PM</span></li>
+              <li data-day="friday"><span>Friday</span><span>11:00 AM – 11:00 PM</span></li>
+              <li data-day="saturday"><span>Saturday</span><span>11:00 AM – 11:00 PM</span></li>
+              <li data-day="sunday"><span>Sunday</span><span>11:00 AM – 11:00 PM</span></li>
+            </ul>
+            <p class="contact-card__note">Sample timings for this demo, not actual opening hours.</p>
+          </div>
+
+          <div class="card contact-card contact-card--cta">
+            <h3 class="contact-card__title"><svg class="icon" aria-hidden="true"><use href="#i-calendar-days"/></svg>Plan Your Visit</h3>
+            <p>Coming with family or a group of friends? Send a table request and we'll take it from there.</p>
+            <a class="btn btn--primary btn--block" href="#reserve">Book a Table</a>
+            <a class="btn btn--outline btn--block" href="#menu">Explore Our Menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="brand brand--footer" href="#home">
+          <svg class="brand__mark" viewBox="0 0 48 48" width="44" height="44" aria-hidden="true"><use href="#logo-mark"/></svg>
+          <span class="brand__text"><span class="brand__name">The Food Garden</span> <span class="brand__tag">Good Food. Great Moments.</span> <span class="sr-only">Back to top</span></span>
+        </a>
+        <p class="site-footer__about">A multi-cuisine restaurant on GS Road, Guwahati, serving starters, main courses, pizzas, desserts and beverages for every craving.</p>
+      </div>
+
+      <nav class="site-footer__col" aria-label="Quick navigation">
+        <h3 class="site-footer__heading">Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#location">Location</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#reserve">Book a Table</a></li>
+        </ul>
+      </nav>
+
+      <nav class="site-footer__col" aria-label="Menu categories">
+        <h3 class="site-footer__heading">Menu Categories</h3>
+        <ul>
+          <li><a href="#menu" data-category="starters">Starters</a></li>
+          <li><a href="#menu" data-category="main-course">Main Course</a></li>
+          <li><a href="#menu" data-category="pizza-fast-food">Pizza &amp; Fast Food</a></li>
+          <li><a href="#menu" data-category="desserts">Desserts</a></li>
+          <li><a href="#menu" data-category="beverages">Beverages</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-footer__col">
+        <h3 class="site-footer__heading">Visit Us</h3>
+        <address class="site-footer__address">
+          <span class="site-footer__line"><svg class="icon" aria-hidden="true"><use href="#i-map-pin"/></svg><span>GS Road, Christian Basti,<br>Guwahati, Assam, India.</span></span>
+          <span class="site-footer__line"><svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg><span class="phone-masked" translate="no">+91 98765 *****</span></span>
+        </address>
+      </div>
+    </div>
+
+    <div class="container site-footer__bottom">
+      <p>© 2026 The Food Garden.<br class="br-mobile"> Demo Restaurant Website.</p>
+      <p class="site-footer__fine">Fictional restaurant. Photos, menu, prices, ratings, reviews, timings and contact details are sample data.</p>
+    </div>
+  </footer>
+
+  <!-- ============================== FOOD DETAILS DIALOG ============================== -->
+  <dialog class="dish-dialog" id="dish-dialog" aria-labelledby="dish-dialog-title">
+    <button class="dish-dialog__close" type="button" id="dish-dialog-close" aria-label="Close food details"><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg></button>
+    <div class="dish-dialog__body" id="dish-dialog-body"></div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>

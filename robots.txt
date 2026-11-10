@@ -1,0 +1,5 @@
+# The Food Garden is a demo website for a fictional restaurant.
+# Its pages ask search engines not to list them (a "noindex" tag in the HTML).
+# Crawlers must be able to read a page to see that tag, so nothing is blocked here.
+User-agent: *
+Disallow:
