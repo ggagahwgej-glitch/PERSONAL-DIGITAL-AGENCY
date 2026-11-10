@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found | The Food Garden</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#FAF5EC">
+
+  <!-- This page is shown for any address that does not exist, at any depth (for example /old/page).
+       That is why every address in it starts with "/" and its styles are kept inside the file. -->
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+
+  <style>
+    /* Same fonts, colours and buttons as assets/css/styles.css. */
+    @font-face {
+      font-family: "Fraunces";
+      src: url("/assets/fonts/fraunces-display-subset.woff2") format("woff2");
+      font-weight: 400 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "DM Sans";
+      src: url("/assets/fonts/dm-sans-text-subset.woff2") format("woff2");
+      font-weight: 400 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "DM Sans Fallback";
+      src: local("Arial");
+      size-adjust: 104.47%;
+      ascent-override: 94.95%;
+      descent-override: 29.67%;
+      line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: "DM Sans Fallback Android";
+      src: local("Roboto");
+      size-adjust: 104.7%;
+      ascent-override: 94.74%;
+      descent-override: 29.61%;
+      line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: "Fraunces Fallback";
+      src: local("Georgia");
+      size-adjust: 101.33%;
+      ascent-override: 96.51%;
+      descent-override: 25.16%;
+      line-gap-override: 0%;
+    }
+    @font-face {
+      font-family: "Fraunces Fallback Android";
+      src: local("Noto Serif");
+      size-adjust: 93.92%;
+      ascent-override: 104.13%;
+      descent-override: 27.15%;
+      line-gap-override: 0%;
+    }
+
+    :root {
+      --cream: #FAF5EC;
+      --white: #FFFDF9;
+      --line: #E7DAC5;
+      --line-strong: #D6C5AA;
+      --olive-dark: #55622F;
+      --terracotta-dark: #AC4F2E;
+      --terracotta-deep: #96421F;
+      --brown: #3A2A1E;
+      --text: #5C4A3C;
+      --muted: #736152;
+      --font-display: "Fraunces", "Fraunces Fallback", "Fraunces Fallback Android", Georgia, "Times New Roman", serif;
+      --font-body: "DM Sans", "DM Sans Fallback", "DM Sans Fallback Android", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      --focus: 0 0 0 3px var(--white), 0 0 0 6px var(--olive-dark);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--cream);
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a { color: inherit; }
+    :focus { outline: none; }
+    :focus-visible { box-shadow: var(--focus); border-radius: 6px; }
+
+    .top {
+      padding: 14px clamp(16px, 4vw, 32px);
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 44px;
+      text-decoration: none;
+      color: var(--brown);
+      border-radius: 12px;
+    }
+    .brand__mark { display: block; width: 40px; height: 40px; flex: none; }
+    .brand__name {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .lost {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto;
+      padding: clamp(40px, 8vw, 88px) clamp(16px, 4vw, 32px);
+      text-align: center;
+    }
+    .lost__code {
+      margin: 0 0 12px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta-dark);
+    }
+    h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw + 1rem, 3.25rem);
+      font-weight: 600;
+      line-height: 1.12;
+      letter-spacing: -0.015em;
+      color: var(--brown);
+      text-wrap: balance;
+    }
+    .lost__text {
+      max-width: 34em;
+      margin: 16px 0 0;
+      font-size: 1.0625rem;
+      text-wrap: pretty;
+    }
+    .lost__actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 12px 28px;
+      border: 1.5px solid transparent;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      -webkit-tap-highlight-color: transparent;
+      transition: background-color 0.18s ease, border-color 0.18s ease, transform 0.12s ease;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:focus-visible { border-radius: 999px; }
+    .btn--primary {
+      background: var(--terracotta-dark);
+      color: #fff;
+      box-shadow: 0 6px 16px rgba(172, 79, 46, 0.22);
+    }
+    /* its own shadow would replace the focus ring, so both are listed */
+    .btn--primary:focus-visible { box-shadow: var(--focus), 0 6px 16px rgba(172, 79, 46, 0.22); }
+    .btn--outline {
+      background: var(--white);
+      border-color: var(--line-strong);
+      color: var(--brown);
+    }
+    @media (hover: hover) {
+      .btn--primary:hover { background: var(--terracotta-deep); }
+      .btn--outline:hover { border-color: var(--olive-dark); }
+    }
+    @media (max-width: 479px) {
+      .btn { width: 100%; }
+    }
+
+    .foot {
+      padding: 18px clamp(16px, 4vw, 32px) 24px;
+      font-size: 0.8125rem;
+      text-align: center;
+      color: var(--muted);
+    }
+    .foot p { margin: 0; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
+    }
+    @media (forced-colors: active) {
+      :focus-visible { outline: 3px solid Highlight; outline-offset: 3px; }
+      .btn { border-color: ButtonText; }
+    }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="/">
+      <svg class="brand__mark" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true" focusable="false">
+        <circle cx="24" cy="24" r="24" fill="#55622F"/>
+        <circle cx="24" cy="24" r="18.5" fill="none" stroke="#FAF5EC" stroke-width="1.4" opacity=".42"/>
+        <path d="M24 36.5V24" fill="none" stroke="#FAF5EC" stroke-width="2.3" stroke-linecap="round"/>
+        <path d="M23 28.4c-6 .2-9.9-3.5-10.1-9.9 6.3-.3 10.2 3.3 10.1 9.9Z" fill="#FAF5EC"/>
+        <path d="M25 24.6c-.1-6.9 3.9-10.9 10.5-10.6.2 6.9-3.8 10.9-10.5 10.6Z" fill="#FAF5EC"/>
+      </svg>
+      <span class="brand__name">The Food Garden</span>
+    </a>
+  </header>
+
+  <main class="lost">
+    <p class="lost__code">Error 404</p>
+    <h1>We can't find that page.</h1>
+    <p class="lost__text">The address may be mistyped, or the page may have moved. The menu, reviews and table booking are all on the home page.</p>
+    <div class="lost__actions">
+      <a class="btn btn--primary" href="/">Back to Home</a>
+      <a class="btn btn--outline" href="/#menu">Explore Our Menu</a>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <p>The Food Garden. Demo restaurant website.</p>
+  </footer>
+</body>
+</html>
